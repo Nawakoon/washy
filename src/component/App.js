@@ -1,12 +1,24 @@
 import "./App.css"
 import Header from "./Header";
-import WMachine from "./WMachine";
+import WMachine2 from "./WMachine2";
+import machineData from "../localDatabase";
 
 function App() {
+
+  const machine = machineData.map((item) => {
+    return (
+      <WMachine2
+        key={item.id}
+        item={item}/>
+    )
+  })
+
   return (
     <div className="App">
       <Header />
-      <WMachine />
+      <section className="machine-list">
+        {machine}
+      </section>
     </div>
   )
 }
