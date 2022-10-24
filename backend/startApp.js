@@ -54,7 +54,7 @@ function startApp () {
     const time = new Date()
     const now = time.getTime()
     const in5sec = time.setSeconds(time.getSeconds() + 5)
-    const in70sec = time.setSeconds(time.getSeconds() + 70)
+    const in70sec = time.setSeconds(time.getSeconds() + 65)
     const in14min = time.setMinutes(time.getMinutes() + 14)
     const timeArray = [
         now,

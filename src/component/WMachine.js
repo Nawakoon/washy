@@ -1,7 +1,6 @@
 import Timer from "./Timer"
 
 function WMachine(props) {
-    // console.log(props)
     return (
         <div className="wmachine-container">
             <div className="machine">
