@@ -1,28 +1,36 @@
 const { machineData } = require("../database")
 const { notifyEvent } = require("./notify")
 
-// exports.runLineNotiry = () => {
-// function runLineNotify() {
-//     while (true) {
-//         let now = (new Date()).getTime()
-//         let latestFinish = machineData[2].latestFinish
-//         let distance = latestFinish - now
-//         // if 1 min left -> send notify
-//         if (distance == 60000) {
-//             notifyEvent()
-//         }
-//     }
-// }
+
+function checkDistance(dis, machineId) {
+    if (dis <= 60000 && dis >= 59000) {
+        const message = `machine no. ${machineId} :
+1 minute left`
+        console.log(message)
+        notifyEvent(message)
+    }
+}
 
 setInterval(() => {
-    let now = (new Date()).getTime()
-    let latestFinish = machineData[2].latestFinish
-    let distance = latestFinish - now
+    const now = (new Date()).getTime()
+    const latestFinish1 = machineData[0].latestFinish
+    const latestFinish2 = machineData[1].latestFinish
+    const latestFinish3 = machineData[2].latestFinish
+    const latestFinish4 = machineData[3].latestFinish
 
-    if (distance <= 60000 && distance >= 59000) {
-        console.log("1 minute left")
-        notifyEvent()
-    }
+    let distance1 = latestFinish1 - now
+    let distance2 = latestFinish2 - now
+    let distance3 = latestFinish3 - now
+    let distance4 = latestFinish4 - now
 
-    console.log(`time left : ${distance / 1000} second`)
+    checkDistance(distance1, 1)
+    checkDistance(distance2, 2)
+    checkDistance(distance3, 3)
+    checkDistance(distance4, 4)
+
+    console.log(`m1: ${distance1 / 1000} sec`)
+    console.log(`m2: ${distance2 / 1000} sec`)
+    console.log(`m3: ${distance3 / 1000} sec`)
+    console.log(`m4: ${distance4 / 1000} sec`)
+
 }, 1000);

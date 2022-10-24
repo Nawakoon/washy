@@ -1,9 +1,9 @@
 const request = require("request")
 require("dotenv").config()
 
-const LINE_TOKEN = process.env.LINE_TOKEN
+const LINE_TOKEN = process.env.LINE_TOKEN || "set your LINE_TOKEN here"
 
-exports.notifyEvent = () => {
+exports.notifyEvent = (msg) => {
     request({
         uri: "https://notify-api.line.me/api/notify",
         method: "POST",
@@ -11,7 +11,7 @@ exports.notifyEvent = () => {
             bearer: LINE_TOKEN
         },
         form: {
-            message: "1 minute left"
+            message: msg
         }
     })
 }

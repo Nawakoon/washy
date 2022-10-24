@@ -1,7 +1,7 @@
 const machineData = [
     {
         id: 1,
-        latestFinish: 1666600829030,
+        latestFinish: 1666611073937,
         name: "santitham 1",
         size: 13,
         price: 30,
@@ -9,7 +9,7 @@ const machineData = [
     },
     {
         id: 2,
-        latestFinish: 1666600834030,
+        latestFinish: 1666616098852,
         name: "santitham 1",
         size: 16,
         price: 40,
@@ -17,7 +17,7 @@ const machineData = [
     },
     {
         id: 3,
-        latestFinish: 1666600904030,
+        latestFinish: 1666611140937,
         name: "santitham 1",
         size: 16,
         price: 40,
@@ -25,7 +25,7 @@ const machineData = [
     },
     {
         id: 4,
-        latestFinish: 1666601744030,
+        latestFinish: 1666611215937,
         name: "santitham 1",
         size: 13,
         price: 30,

@@ -1,13 +1,13 @@
 import "./App.css"
 import Header from "./Header";
-import WMachine2 from "./WMachine2";
+import WMachine from "./WMachine";
 import machineData from "../localDatabase";
 
 function App() {
 
   const machine = machineData.map((item) => {
     return (
-      <WMachine2
+      <WMachine
         key={item.id}
         item={item}/>
     )
