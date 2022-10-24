@@ -51,16 +51,23 @@ module.exports = {machineData}`
 }
 
 function coinedMachine1 () {
-    const workTime = dataBase.machineData[0].spinTime
     const time = new Date()
-    time.setMinutes(time.getMinutes() + workTime)
-    const timeArray = [
-        time.getTime(),
-        dataBase.machineData[1].latestFinish,
-        dataBase.machineData[2].latestFinish,
-        dataBase.machineData[3].latestFinish,
-    ]
-    pushDatabase(timeArray)
+    const dataBaesTime = dataBase.machineData[0].latestFinish
+    const workTime = dataBase.machineData[0].spinTime
+    
+    if (time.getTime() < dataBaesTime) {
+        console.log("machine used, please use another machine")
+    } else {
+        time.setMinutes(time.getMinutes() + workTime)
+        const timeArray = [
+            time.getTime(),
+            dataBase.machineData[1].latestFinish,
+            dataBase.machineData[2].latestFinish,
+            dataBase.machineData[3].latestFinish,
+        ]
+        pushDatabase(timeArray)
+        console.log(`machine start! ${workTime} min. left`)
+    }
 }
 
 coinedMachine1()

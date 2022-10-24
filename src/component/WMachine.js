@@ -1,6 +1,6 @@
 import Timer from "./Timer"
 
-function WMachine2(props) {
+function WMachine(props) {
     // console.log(props)
     return (
         <div className="wmachine-container">
@@ -17,4 +17,4 @@ function WMachine2(props) {
     )
 }
 
-export default WMachine2
+export default WMachine
